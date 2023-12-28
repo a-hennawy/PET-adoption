@@ -1,0 +1,26 @@
+{%extends 'base-file/base.html'%}{%block title%}Pets for
+Adoption{%endblock%}{%block content%}
+
+<div class="container-fluid">
+  <h1 class="text-center">Our pets</h1>
+  {%for pet in pets%}
+  <div class="container">
+    <div class="row">
+      <div class="col-9">
+        <img
+          class="img-fluid"
+          src="{{pet.pet_pic}}"
+          alt="{{pet.pet_name}} the {{pet.pet_species}}"
+          style="width: 13rem"
+        />
+        <div><a href="/{{pet.pet_id}}">{{pet.pet_name}}</a></div>
+        {%if pet.is_available%} <b>Pet available!</b>{%endif%}
+      </div>
+    </div>
+  </div>
+  {%endfor%}
+  <div class="btn">
+    <a href="/add" class="btn bg-info text-center">Add a pet</a>
+  </div>
+</div>
+{%endblock%}

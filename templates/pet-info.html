@@ -1,0 +1,23 @@
+{%extends 'base-file/base.html'%}{%block title%}Pet
+information{%endblock%}{%block content%}
+<div class="container">
+  <section class="media">
+    <div class="media-left">
+      <img
+        src="{{pet.pet_pic}}"
+        class="media-object img"
+        style="width: 200px"
+        alt=""
+      />
+      <div class="media-body">
+        <h3 class="media-heading">My name is <em>{{pet.pet_name}}</em></h3>
+        <h4>I am {{pet.pet_age}} years old</h4>
+      </div>
+      <h5>I am a {{pet.pet_species}}!</h5>
+      <div class="form-group form-group-sm">
+        <a class="btn btn-info btn-sm" href="/{{pet.pet_id}}/edit">Edit</a>
+      </div>
+    </div>
+  </section>
+</div>
+{%endblock%}
